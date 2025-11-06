@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request, abort
 import json
 import os
 
-app = Flask(__name__)
+webserver = Flask(__name__)
 
 # Load the combined JSON data
 RECIPES_FILE = "recipes.json"
@@ -19,24 +19,24 @@ def get_sizes_for_coffee(coffee):
         return []
 
 # 1. /coffee_recipes -> Returns all coffees with ingredients and recipe steps
-@app.route("/coffee_recipes", methods=["GET"])
+@webserver.route("/coffee_recipes", methods=["GET"])
 def coffee_recipes():
     return jsonify(recipes_data), 200
 
 # 2. /coffees -> return all coffee names
-@app.route("/coffees", methods=["GET"])
+@webserver.route("/coffees", methods=["GET"])
 def coffee_names():
     names = [c["name"] for c in recipes_data]
     return jsonify(names), 200
 
 # 3. /categories -> return all category names (standardized to lowercase)
-@app.route("/categories", methods=["GET"])
+@webserver.route("/categories", methods=["GET"])
 def categories():
     cats = list(set(c["category"].lower() for c in recipes_data))
     return jsonify(cats), 200
 
 # 4. /category/<category_name> -> coffee names under category
-@app.route("/category/<category_name>", methods=["GET"])
+@webserver.route("/category/<category_name>", methods=["GET"])
 def coffees_by_category(category_name):
     names = [c["name"] for c in recipes_data if c["category"].lower() == category_name.lower()]
     if not names:
@@ -44,7 +44,7 @@ def coffees_by_category(category_name):
     return jsonify(names), 200
 
 # 5. /coffees/<coffee_name>/sizes -> list of sizes
-@app.route("/coffees/<coffee_name>/sizes", methods=["GET"])
+@webserver.route("/coffees/<coffee_name>/sizes", methods=["GET"])
 def coffee_sizes(coffee_name):
     coffee = next((c for c in recipes_data if c["name"].lower().replace(' ', '_') == coffee_name.lower()), None)
     if not coffee:
@@ -53,7 +53,7 @@ def coffee_sizes(coffee_name):
     return jsonify(sizes), 200
 
 # 6. /coffees/<coffee_name>/size/<size_name>/ingredients -> return ingredients for specified size
-@app.route("/coffees/<coffee_name>/size/<size_name>/ingredients", methods=["GET"])
+@webserver.route("/coffees/<coffee_name>/size/<size_name>/ingredients", methods=["GET"])
 def coffee_ingredients_size(coffee_name, size_name):
     coffee = next((c for c in recipes_data if c["name"].lower().replace(' ', '_') == coffee_name.lower()), None)
     if not coffee:
@@ -69,7 +69,7 @@ def coffee_ingredients_size(coffee_name, size_name):
     return jsonify(ingredients), 200
 
 # 7. /coffees/<coffee_name>/size/<size_name>/steps -> return recipe steps for coffee (same for all sizes)
-@app.route("/coffees/<coffee_name>/steps", methods=["GET"])
+@webserver.route("/coffees/<coffee_name>/steps", methods=["GET"])
 def coffee_steps(coffee_name):
     coffee = next((c for c in recipes_data if c["name"].lower().replace(' ', '_') == coffee_name.lower()), None)
     if not coffee:
@@ -78,7 +78,7 @@ def coffee_steps(coffee_name):
     return jsonify(steps), 200
 
 # 8. /coffees/filter?category=&name=&size= -> flexible filtering
-@app.route("/coffees/filter", methods=["GET"])
+@webserver.route("/coffees/filter", methods=["GET"])
 def filter_coffees():
     category = request.args.get("category")
     name = request.args.get("name")
@@ -94,12 +94,12 @@ def filter_coffees():
         filtered_size = []
         for c in filtered:
             if c.get("size") and c["size"].lower() == size.lower():
-                filtered_size.append(c)
+                filtered_size.webserverend(c)
             elif c.get("sizes") and size.lower() in c["sizes"]:
                 coffee_copy = c.copy()
                 coffee_copy["ingredients"] = c["sizes"][size.lower()]
                 coffee_copy["size_selected"] = size.lower()
-                filtered_size.append(coffee_copy)
+                filtered_size.webserverend(coffee_copy)
         filtered = filtered_size
 
     if not filtered:
@@ -108,13 +108,13 @@ def filter_coffees():
     return jsonify(filtered), 200
 
 # Error handlers
-@app.errorhandler(404)
+@webserver.errorhandler(404)
 def not_found(error):
     return jsonify({"error": error.description}), 404
 
-@app.errorhandler(500)
+@webserver.errorhandler(500)
 def server_error(error):
     return jsonify({"error": "Internal server error"}), 500
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    webserver.run(debug=True, host='0.0.0.0')
