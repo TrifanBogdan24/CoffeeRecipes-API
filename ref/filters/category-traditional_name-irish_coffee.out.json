@@ -1,0 +1,22 @@
+[
+  {
+    "category": "Traditional",
+    "final_volume_ml": 190,
+    "ingredients": {
+      "brown_sugar": 10,
+      "cream": 30,
+      "hot_coffee": 120,
+      "whiskey": 30
+    },
+    "name": "Irish Coffee",
+    "notes": "Coffee with whiskey, sugar, and cream float.",
+    "recipe_steps": [
+      "Brew hot coffee and pour into a warmed glass.",
+      "Add brown sugar and stir until dissolved.",
+      "Add whiskey and stir gently.",
+      "Float lightly whipped cream on top.",
+      "Serve hot."
+    ],
+    "size": "single"
+  }
+]

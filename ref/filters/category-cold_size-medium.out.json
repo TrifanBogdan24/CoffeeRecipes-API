@@ -1,0 +1,161 @@
+[
+  {
+    "category": "Cold",
+    "ingredients": {
+      "brewed_coffee": 200,
+      "final_volume_ml": 380,
+      "ice": 120,
+      "milk": 60
+    },
+    "name": "Iced Coffee",
+    "notes": "Regular brewed coffee served cold over ice.",
+    "recipe_steps": [
+      "Brew coffee using drip or pour-over method.",
+      "Allow coffee to cool slightly.",
+      "Fill a glass with ice cubes.",
+      "Pour coffee over ice.",
+      "Add milk or sweetener if desired and stir."
+    ],
+    "size_selected": "medium",
+    "sizes": {
+      "large": {
+        "brewed_coffee": 250,
+        "final_volume_ml": 490,
+        "ice": 150,
+        "milk": 90
+      },
+      "medium": {
+        "brewed_coffee": 200,
+        "final_volume_ml": 380,
+        "ice": 120,
+        "milk": 60
+      },
+      "small": {
+        "brewed_coffee": 150,
+        "final_volume_ml": 280,
+        "ice": 100,
+        "milk": 30
+      }
+    }
+  },
+  {
+    "category": "Cold",
+    "ingredients": {
+      "cold_brew_concentrate": 100,
+      "final_volume_ml": 300,
+      "ice": 100,
+      "water_or_milk": 100
+    },
+    "name": "Cold Brew",
+    "notes": "Slow-steeped cold coffee diluted to taste.",
+    "recipe_steps": [
+      "Coarsely grind coffee beans (≈1:8 ratio coffee to water).",
+      "Steep coffee in cold water for 12–24 hours in a container.",
+      "Strain coffee through a fine mesh or filter.",
+      "Pour over ice and dilute with water or milk to taste.",
+      "Serve immediately."
+    ],
+    "size_selected": "medium",
+    "sizes": {
+      "large": {
+        "cold_brew_concentrate": 120,
+        "final_volume_ml": 360,
+        "ice": 120,
+        "water_or_milk": 120
+      },
+      "medium": {
+        "cold_brew_concentrate": 100,
+        "final_volume_ml": 300,
+        "ice": 100,
+        "water_or_milk": 100
+      },
+      "small": {
+        "cold_brew_concentrate": 80,
+        "final_volume_ml": 240,
+        "ice": 80,
+        "water_or_milk": 80
+      }
+    }
+  },
+  {
+    "category": "Cold",
+    "ingredients": {
+      "cold_milk": 180,
+      "espresso": 60,
+      "final_volume_ml": 320,
+      "ice": 100
+    },
+    "name": "Iced Latte",
+    "notes": "Espresso poured over milk and ice.",
+    "recipe_steps": [
+      "Prepare a shot of espresso.",
+      "Fill a glass with ice cubes.",
+      "Pour espresso over ice.",
+      "Add cold milk (proportional to size).",
+      "Stir gently and serve."
+    ],
+    "size_selected": "medium",
+    "sizes": {
+      "large": {
+        "cold_milk": 240,
+        "espresso": 90,
+        "final_volume_ml": 420,
+        "ice": 120
+      },
+      "medium": {
+        "cold_milk": 180,
+        "espresso": 60,
+        "final_volume_ml": 320,
+        "ice": 100
+      },
+      "small": {
+        "cold_milk": 120,
+        "espresso": 30,
+        "final_volume_ml": 230,
+        "ice": 80
+      }
+    }
+  },
+  {
+    "category": "Cold",
+    "ingredients": {
+      "crushed_ice": 150,
+      "espresso_or_instant_coffee": 60,
+      "final_volume_ml": 300,
+      "milk": 60,
+      "syrup_or_sugar": 30
+    },
+    "name": "Frappuccino",
+    "notes": "Blended iced coffee with milk and syrup.",
+    "recipe_steps": [
+      "Brew espresso or instant coffee and allow it to cool.",
+      "Add coffee, milk, sweetener/syrup, and crushed ice to a blender.",
+      "Blend until smooth and frothy.",
+      "Pour into a glass and optionally top with whipped cream."
+    ],
+    "size_selected": "medium",
+    "sizes": {
+      "large": {
+        "crushed_ice": 200,
+        "espresso_or_instant_coffee": 90,
+        "final_volume_ml": 420,
+        "milk": 90,
+        "syrup_or_sugar": 40
+      },
+      "medium": {
+        "crushed_ice": 150,
+        "espresso_or_instant_coffee": 60,
+        "final_volume_ml": 300,
+        "milk": 60,
+        "syrup_or_sugar": 30
+      },
+      "small": {
+        "crushed_ice": 120,
+        "espresso_or_instant_coffee": 45,
+        "final_volume_ml": 230,
+        "milk": 45,
+        "syrup_or_sugar": 20
+      }
+    }
+  }
+]

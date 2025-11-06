@@ -1,0 +1,36 @@
+[
+  {
+    "category": "Cold",
+    "name": "Frappuccino",
+    "notes": "Blended iced coffee with milk and syrup.",
+    "recipe_steps": [
+      "Brew espresso or instant coffee and allow it to cool.",
+      "Add coffee, milk, sweetener/syrup, and crushed ice to a blender.",
+      "Blend until smooth and frothy.",
+      "Pour into a glass and optionally top with whipped cream."
+    ],
+    "sizes": {
+      "large": {
+        "crushed_ice": 200,
+        "espresso_or_instant_coffee": 90,
+        "final_volume_ml": 420,
+        "milk": 90,
+        "syrup_or_sugar": 40
+      },
+      "medium": {
+        "crushed_ice": 150,
+        "espresso_or_instant_coffee": 60,
+        "final_volume_ml": 300,
+        "milk": 60,
+        "syrup_or_sugar": 30
+      },
+      "small": {
+        "crushed_ice": 120,
+        "espresso_or_instant_coffee": 45,
+        "final_volume_ml": 230,
+        "milk": 45,
+        "syrup_or_sugar": 20
+      }
+    }
+  }
+]
