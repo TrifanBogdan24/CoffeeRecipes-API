@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, abort, Response
+from flask import Flask, jsonify, request, abort, Response, send_file
 from http import HTTPStatus
 import json
 import os
@@ -18,6 +18,11 @@ def get_sizes_for_coffee(coffee):
         return list(coffee["sizes"].keys())
     else:
         return []
+
+# 0. / -> root endpoint (check connectivity)
+@webserver.route("/", methods=["GET"])
+def root_page():
+    return Response(status=HTTPStatus.OK)
 
 # 1. /coffee_recipes -> Returns all coffees with ingredients and recipe steps
 @webserver.route("/coffee_recipes", methods=["GET"])
@@ -108,9 +113,12 @@ def filter_coffees():
     
     return jsonify(filtered), 200
 
-@webserver.route("/", methods=["GET"])
-def root_page():
-    return Response(status=HTTPStatus.OK)
+# 9. /images/<coffee_name> -> get the picture of a coffee
+@webserver.route('/images/<coffee_name>')
+def get_image(coffee_name):
+    image_path = f'images/{coffee_name}.jpeg'
+    return send_file(image_path, mimetype='image/jpeg')
+
 
 
 # Error handlers
