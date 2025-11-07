@@ -1,4 +1,5 @@
-from flask import Flask, jsonify, request, abort
+from flask import Flask, jsonify, request, abort, Response
+from http import HTTPStatus
 import json
 import os
 
@@ -106,6 +107,11 @@ def filter_coffees():
         abort(404, description="No matching coffees found")
     
     return jsonify(filtered), 200
+
+@webserver.route("/", methods=["GET"])
+def root_page():
+    return Response(status=HTTPStatus.OK)
+
 
 # Error handlers
 @webserver.errorhandler(404)
