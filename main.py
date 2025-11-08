@@ -12,12 +12,9 @@ with open(RECIPES_FILE, "r", encoding="utf-8") as f:
 
 # Helper function to create arrays coffee sizes
 def get_sizes_for_coffee(coffee):
-    if coffee.get("size"):
-        return [coffee["size"]]
-    elif coffee.get("sizes"):
-        return list(coffee["sizes"].keys())
-    else:
-        return []
+    if "ingredients" in coffee:
+        return list(coffee["ingredients"].keys())
+    return []
 
 # 0. / -> root endpoint (check connectivity)
 @webserver.route("/", methods=["GET"])
@@ -58,21 +55,22 @@ def coffee_sizes(coffee_name):
     sizes = get_sizes_for_coffee(coffee)
     return jsonify(sizes), 200
 
-# 6. /coffees/<coffee_name>/size/<size_name>/ingredients -> return ingredients for specified size
-@webserver.route("/coffees/<coffee_name>/size/<size_name>/ingredients", methods=["GET"])
+# 6. /coffees/<size_name>/<coffee_name>/ingredients -> return ingredients for specified size
+@webserver.route("/coffees/<size_name>/<coffee_name>/ingredients", methods=["GET"])
 def coffee_ingredients_size(coffee_name, size_name):
-    coffee = next((c for c in recipes_data if c["name"].lower().replace(' ', '_') == coffee_name.lower()), None)
+    coffee = next(
+        (c for c in recipes_data if c["name"].lower().replace(' ', '_') == coffee_name.lower()),
+        None
+    )
     if not coffee:
         abort(404, description="Coffee not found")
     
-    if coffee.get("size") and coffee["size"].lower() == size_name.lower():
-        ingredients = coffee.get("ingredients", {})
-    elif coffee.get("sizes") and size_name.lower() in coffee["sizes"]:
-        ingredients = coffee["sizes"][size_name.lower()]
-    else:
+    ingredients = coffee.get("ingredients", {}).get(size_name.lower())
+    if not ingredients:
         abort(404, description="Size not available")
     
     return jsonify(ingredients), 200
+
 
 # 7. /coffees/<coffee_name>/size/<size_name>/steps -> return recipe steps for coffee (same for all sizes)
 @webserver.route("/coffees/<coffee_name>/steps", methods=["GET"])
@@ -83,7 +81,28 @@ def coffee_steps(coffee_name):
     steps = coffee.get("recipe_steps", [])
     return jsonify(steps), 200
 
-# 8. /coffees/filter?category=&name=&size= -> flexible filtering
+# 8. /coffees/<coffee_name>/<size_name>/final_volume
+@webserver.route("/coffees/<coffee_name>/<size_name>/final_volume", methods=["GET"])
+def coffee_final_volume(coffee_name, size_name):
+    # Find the coffee by name
+    coffee = next(
+        (c for c in recipes_data if c["name"].lower().replace(' ', '_') == coffee_name.lower()),
+        None
+    )
+    if not coffee:
+        abort(404, description="Coffee not found")
+    
+    # Get the final volume for the requested size
+    final_volume = coffee.get("final_volume", {}).get(size_name.lower())
+    if not final_volume:
+        abort(404, description="Size not available or final volume not set")
+    
+    return jsonify({
+        "final_volume": final_volume
+    }), 200
+
+
+# 9. /coffees/filter?category=&name=&size= -> flexible filtering
 @webserver.route("/coffees/filter", methods=["GET"])
 def filter_coffees():
     category = request.args.get("category")
@@ -99,13 +118,11 @@ def filter_coffees():
     if size:
         filtered_size = []
         for c in filtered:
-            if c.get("size") and c["size"].lower() == size.lower():
-                filtered_size.webserverend(c)
-            elif c.get("sizes") and size.lower() in c["sizes"]:
+            if size.lower() in c.get("ingredients", {}):
                 coffee_copy = c.copy()
-                coffee_copy["ingredients"] = c["sizes"][size.lower()]
+                coffee_copy["ingredients"] = c["ingredients"][size.lower()]
                 coffee_copy["size_selected"] = size.lower()
-                filtered_size.webserverend(coffee_copy)
+                filtered_size.append(coffee_copy)
         filtered = filtered_size
 
     if not filtered:
@@ -113,7 +130,7 @@ def filter_coffees():
     
     return jsonify(filtered), 200
 
-# 9. /images/coffee_list/<coffee_name> -> get the picture of a coffee
+# 10. /images/coffee_list/<coffee_name> -> get the picture of a coffee
 @webserver.route('/images/coffee_list/<coffee_name>')
 def get_coffee_img(coffee_name):
     image_path = f'images/coffee_list/{coffee_name}.jpeg'
@@ -121,7 +138,7 @@ def get_coffee_img(coffee_name):
 
 
 
-# 10. /images/<coffe_type>/<cup_size> -> get the picture of a cup size
+# 11. /images/<coffe_type>/<cup_size> -> get the picture of a cup size
 @webserver.route('/images/<coffee_type>/<cup_size>')
 def get_cup_img(coffee_type, cup_size):
     if coffee_type not in ['hot', 'cold']:

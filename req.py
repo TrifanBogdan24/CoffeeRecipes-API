@@ -2,7 +2,8 @@ import requests
 import json
 import os
 
-BASE_URL = "http://127.0.0.1:5000"  # Adjust to your Flask host/port
+# Adjust to Flask host/port
+BASE_URL = "http://127.0.0.1:5000"
 REF_DIR = "ref"
 
 # Helper functions
@@ -53,7 +54,7 @@ if coffees:
         if sizes_data:
             save_json(os.path.join(REF_DIR, "coffee_sizes", f"{coffee_norm}.out.json"), sizes_data)
 
-# 6. /coffees/<coffee_name>/size/<size_name>/ingredients
+# 6. /coffees/<size_name>/<coffee_name>/ingredients
 if coffees:
     for coffee in coffees:
         coffee_norm = coffee.lower().replace(' ', '_')
@@ -64,9 +65,12 @@ if coffees:
                 sizes = json.load(f)
             for size in sizes:
                 size_norm = str(size).lower()
-                ingredients = get_json(f"/coffees/{coffee_norm}/size/{size_norm}/ingredients")
+                ingredients = get_json(f"/coffees/{size_norm}/{coffee_norm}/ingredients")
                 if ingredients:
-                    save_json(os.path.join(REF_DIR, "coffee_ingredients", coffee_norm, f"{size_norm}.out.json"), ingredients)
+                    save_json(
+                        os.path.join(REF_DIR, "coffee_ingredients", coffee_norm, f"{size_norm}.out.json"),
+                        ingredients
+                    )
 
 # 7. /coffees/<coffee_name>/steps
 coffees = get_json("/coffees")
@@ -77,9 +81,7 @@ if coffees:
         if steps:
             save_json(os.path.join(REF_DIR, "coffee_steps", f"{coffee_norm}.out.json"), steps)
 
-
 # 8. /coffees/filter?category=&name=&size=
-# We can do some sample filters: by category, by coffee, by size
 filters_dir = os.path.join(REF_DIR, "filters")
 os.makedirs(filters_dir, exist_ok=True)
 
@@ -91,10 +93,16 @@ sample_filters = [
     {"size": "small"}
 ]
 
-for idx, f in enumerate(sample_filters, start=1):
+for f in sample_filters:
     params = "&".join(f"{k}={v}" for k, v in f.items())
     endpoint = f"/coffees/filter?{params}"
     filter_data = get_json(endpoint)
     if filter_data:
+        # Include final_volume if present
+        for coffee in filter_data:
+            size_selected = coffee.get("size_selected")
+            if size_selected and "final_volume" in coffee:
+                coffee["final_volume_for_size"] = coffee["final_volume"].get(size_selected)
+
         filter_name = "_".join([f"{k}-{v}" for k, v in f.items()])
         save_json(os.path.join(filters_dir, f"{filter_name}.out.json"), filter_data)

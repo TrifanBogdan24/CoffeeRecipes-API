@@ -2,11 +2,14 @@
   {
     "category": "Espresso-Based",
     "name": "Espresso",
-    "size": "single",
     "ingredients": {
-      "espresso": 30
+      "small": {
+        "espresso": "30ml"
+      }
     },
-    "final_volume_ml": 30,
+    "final_volume": {
+      "small": "30ml"
+    },
     "notes": "Single shot of concentrated coffee.",
     "recipe_steps": [
       "Grind fresh coffee beans to a fine consistency.",
@@ -18,22 +21,24 @@
   {
     "category": "Espresso-Based",
     "name": "Americano",
-    "sizes": {
+    "ingredients": {
       "small": {
-        "espresso": 30,
-        "hot_water": 90,
-        "final_volume_ml": 120
+        "espresso": "30ml",
+        "hot_water": "90ml"
       },
       "medium": {
-        "espresso": 60,
-        "hot_water": 150,
-        "final_volume_ml": 210
+        "espresso": "60ml",
+        "hot_water": "150ml"
       },
       "large": {
-        "espresso": 90,
-        "hot_water": 210,
-        "final_volume_ml": 300
+        "espresso": "90ml",
+        "hot_water": "210ml"
       }
+    },
+    "final_volume": {
+      "small": "120ml",
+      "medium": "210ml",
+      "large": "300ml"
     },
     "notes": "Espresso diluted with hot water.",
     "recipe_steps": [
@@ -46,22 +51,24 @@
   {
     "category": "Espresso-Based",
     "name": "Macchiato",
-    "sizes": {
+    "ingredients": {
       "small": {
-        "espresso": 30,
-        "milk_foam": 10,
-        "final_volume_ml": 40
+        "espresso": "30ml",
+        "milk_foam": "10ml"
       },
       "medium": {
-        "espresso": 60,
-        "milk_foam": 20,
-        "final_volume_ml": 80
+        "espresso": "60ml",
+        "milk_foam": "20ml"
       },
       "large": {
-        "espresso": 90,
-        "milk_foam": 30,
-        "final_volume_ml": 120
+        "espresso": "90ml",
+        "milk_foam": "30ml"
       }
+    },
+    "final_volume": {
+      "small": "40ml",
+      "medium": "80ml",
+      "large": "120ml"
     },
     "notes": "Espresso with a small amount of milk foam.",
     "recipe_steps": [
@@ -74,25 +81,27 @@
   {
     "category": "Espresso-Based",
     "name": "Cappuccino",
-    "sizes": {
+    "ingredients": {
       "small": {
-        "espresso": 30,
-        "steamed_milk": 60,
-        "milk_foam": 60,
-        "final_volume_ml": 150
+        "espresso": "30ml",
+        "steamed_milk": "60ml",
+        "milk_foam": "60ml"
       },
       "medium": {
-        "espresso": 60,
-        "steamed_milk": 120,
-        "milk_foam": 120,
-        "final_volume_ml": 300
+        "espresso": "60ml",
+        "steamed_milk": "120ml",
+        "milk_foam": "120ml"
       },
       "large": {
-        "espresso": 90,
-        "steamed_milk": 180,
-        "milk_foam": 180,
-        "final_volume_ml": 450
+        "espresso": "90ml",
+        "steamed_milk": "180ml",
+        "milk_foam": "180ml"
       }
+    },
+    "final_volume": {
+      "small": "150ml",
+      "medium": "300ml",
+      "large": "450ml"
     },
     "notes": "Equal parts espresso, steamed milk, and foam.",
     "recipe_steps": [
@@ -106,25 +115,27 @@
   {
     "category": "Espresso-Based",
     "name": "Latte",
-    "sizes": {
+    "ingredients": {
       "small": {
-        "espresso": 30,
-        "steamed_milk": 150,
-        "milk_foam": 10,
-        "final_volume_ml": 190
+        "espresso": "30ml",
+        "steamed_milk": "150ml",
+        "milk_foam": "10ml"
       },
       "medium": {
-        "espresso": 60,
-        "steamed_milk": 240,
-        "milk_foam": 20,
-        "final_volume_ml": 320
+        "espresso": "60ml",
+        "steamed_milk": "240ml",
+        "milk_foam": "20ml"
       },
       "large": {
-        "espresso": 90,
-        "steamed_milk": 330,
-        "milk_foam": 30,
-        "final_volume_ml": 450
+        "espresso": "90ml",
+        "steamed_milk": "330ml",
+        "milk_foam": "30ml"
       }
+    },
+    "final_volume": {
+      "small": "190ml",
+      "medium": "320ml",
+      "large": "450ml"
     },
     "notes": "Creamy espresso drink with lots of steamed milk.",
     "recipe_steps": [
@@ -138,22 +149,24 @@
   {
     "category": "Espresso-Based",
     "name": "Flat White",
-    "sizes": {
+    "ingredients": {
       "small": {
-        "espresso": 30,
-        "microfoam_milk": 120,
-        "final_volume_ml": 150
+        "espresso": "30ml",
+        "microfoam_milk": "120ml"
       },
       "medium": {
-        "espresso": 60,
-        "microfoam_milk": 180,
-        "final_volume_ml": 240
+        "espresso": "60ml",
+        "microfoam_milk": "180ml"
       },
       "large": {
-        "espresso": 90,
-        "microfoam_milk": 240,
-        "final_volume_ml": 330
+        "espresso": "90ml",
+        "microfoam_milk": "240ml"
       }
+    },
+    "final_volume": {
+      "small": "150ml",
+      "medium": "240ml",
+      "large": "330ml"
     },
     "notes": "Strong coffee-to-milk ratio with silky microfoam.",
     "recipe_steps": [
@@ -166,25 +179,27 @@
   {
     "category": "Cold",
     "name": "Iced Coffee",
-    "sizes": {
+    "ingredients": {
       "small": {
-        "brewed_coffee": 150,
-        "milk": 30,
-        "ice": 100,
-        "final_volume_ml": 280
+        "brewed_coffee": "150ml",
+        "milk": "30ml",
+        "ice": "100ml"
       },
       "medium": {
-        "brewed_coffee": 200,
-        "milk": 60,
-        "ice": 120,
-        "final_volume_ml": 380
+        "brewed_coffee": "200ml",
+        "milk": "60ml",
+        "ice": "120ml"
       },
       "large": {
-        "brewed_coffee": 250,
-        "milk": 90,
-        "ice": 150,
-        "final_volume_ml": 490
+        "brewed_coffee": "250ml",
+        "milk": "90ml",
+        "ice": "150ml"
       }
+    },
+    "final_volume": {
+      "small": "280ml",
+      "medium": "380ml",
+      "large": "490ml"
     },
     "notes": "Regular brewed coffee served cold over ice.",
     "recipe_steps": [
@@ -198,25 +213,27 @@
   {
     "category": "Cold",
     "name": "Cold Brew",
-    "sizes": {
+    "ingredients": {
       "small": {
-        "cold_brew_concentrate": 80,
-        "water_or_milk": 80,
-        "ice": 80,
-        "final_volume_ml": 240
+        "cold_brew_concentrate": "80ml",
+        "water_or_milk": "80ml",
+        "ice": "80ml"
       },
       "medium": {
-        "cold_brew_concentrate": 100,
-        "water_or_milk": 100,
-        "ice": 100,
-        "final_volume_ml": 300
+        "cold_brew_concentrate": "100ml",
+        "water_or_milk": "100ml",
+        "ice": "100ml"
       },
       "large": {
-        "cold_brew_concentrate": 120,
-        "water_or_milk": 120,
-        "ice": 120,
-        "final_volume_ml": 360
+        "cold_brew_concentrate": "120ml",
+        "water_or_milk": "120ml",
+        "ice": "120ml"
       }
+    },
+    "final_volume": {
+      "small": "240ml",
+      "medium": "300ml",
+      "large": "360ml"
     },
     "notes": "Slow-steeped cold coffee diluted to taste.",
     "recipe_steps": [
@@ -230,11 +247,14 @@
   {
     "category": "Cold",
     "name": "Nitro Cold Brew",
-    "size": "single",
     "ingredients": {
-      "nitro_cold_brew": 240
+      "small": {
+        "nitro_cold_brew": "240ml"
+      }
     },
-    "final_volume_ml": 240,
+    "final_volume": {
+      "small": "240ml"
+    },
     "notes": "Nitrogen-infused cold brew with creamy texture.",
     "recipe_steps": [
       "Prepare cold brew coffee concentrate.",
@@ -246,25 +266,27 @@
   {
     "category": "Cold",
     "name": "Iced Latte",
-    "sizes": {
+    "ingredients": {
       "small": {
-        "espresso": 30,
-        "cold_milk": 120,
-        "ice": 80,
-        "final_volume_ml": 230
+        "espresso": "30ml",
+        "cold_milk": "120ml",
+        "ice": "80ml"
       },
       "medium": {
-        "espresso": 60,
-        "cold_milk": 180,
-        "ice": 100,
-        "final_volume_ml": 320
+        "espresso": "60ml",
+        "cold_milk": "180ml",
+        "ice": "100ml"
       },
       "large": {
-        "espresso": 90,
-        "cold_milk": 240,
-        "ice": 120,
-        "final_volume_ml": 420
+        "espresso": "90ml",
+        "cold_milk": "240ml",
+        "ice": "120ml"
       }
+    },
+    "final_volume": {
+      "small": "230ml",
+      "medium": "320ml",
+      "large": "420ml"
     },
     "notes": "Espresso poured over milk and ice.",
     "recipe_steps": [
@@ -278,28 +300,30 @@
   {
     "category": "Cold",
     "name": "Frappuccino",
-    "sizes": {
+    "ingredients": {
       "small": {
-        "espresso_or_instant_coffee": 45,
-        "milk": 45,
-        "syrup_or_sugar": 20,
-        "crushed_ice": 120,
-        "final_volume_ml": 230
+        "espresso_or_instant_coffee": "45ml",
+        "milk": "45ml",
+        "syrup_or_sugar": "20ml",
+        "crushed_ice": "120ml"
       },
       "medium": {
-        "espresso_or_instant_coffee": 60,
-        "milk": 60,
-        "syrup_or_sugar": 30,
-        "crushed_ice": 150,
-        "final_volume_ml": 300
+        "espresso_or_instant_coffee": "60ml",
+        "milk": "60ml",
+        "syrup_or_sugar": "30ml",
+        "crushed_ice": "150ml"
       },
       "large": {
-        "espresso_or_instant_coffee": 90,
-        "milk": 90,
-        "syrup_or_sugar": 40,
-        "crushed_ice": 200,
-        "final_volume_ml": 420
+        "espresso_or_instant_coffee": "90ml",
+        "milk": "90ml",
+        "syrup_or_sugar": "40ml",
+        "crushed_ice": "200ml"
       }
+    },
+    "final_volume": {
+      "small": "230ml",
+      "medium": "300ml",
+      "large": "420ml"
     },
     "notes": "Blended iced coffee with milk and syrup.",
     "recipe_steps": [
@@ -312,13 +336,16 @@
   {
     "category": "Traditional",
     "name": "Turkish Coffee",
-    "size": "single",
     "ingredients": {
-      "ground_coffee_g": 7,
-      "water": 70,
-      "sugar": 5
+      "small": {
+        "ground_coffee_g": "7g",
+        "water": "70ml",
+        "sugar": "5g"
+      }
     },
-    "final_volume_ml": 70,
+    "final_volume": {
+      "small": "70ml"
+    },
     "notes": "Thick, unfiltered coffee brewed in a cezve.",
     "recipe_steps": [
       "Add finely ground coffee, water, and sugar (if desired) to a cezve.",
@@ -331,13 +358,16 @@
   {
     "category": "Traditional",
     "name": "Arabic Coffee",
-    "size": "single",
     "ingredients": {
-      "ground_coffee_g": 7,
-      "water": 100,
-      "cardamom_g": 0.25
+      "small": {
+        "ground_coffee_g": "7g",
+        "water": "100ml",
+        "cardamom_g": "0.25g"
+      }
     },
-    "final_volume_ml": 100,
+    "final_volume": {
+      "small": "100ml"
+    },
     "notes": "Light roast coffee with cardamom, traditionally unsweetened.",
     "recipe_steps": [
       "Add lightly roasted coffee and cardamom to a small pot with water.",
@@ -349,25 +379,27 @@
   {
     "category": "Traditional",
     "name": "Vietnamese Coffee",
-    "sizes": {
+    "ingredients": {
       "small": {
-        "ground_coffee_g": 20,
-        "water": 50,
-        "condensed_milk": 25,
-        "final_volume_ml": 100
+        "ground_coffee_g": "20g",
+        "water": "50ml",
+        "condensed_milk": "25ml"
       },
       "medium": {
-        "ground_coffee_g": 25,
-        "water": 60,
-        "condensed_milk": 30,
-        "final_volume_ml": 120
+        "ground_coffee_g": "25g",
+        "water": "60ml",
+        "condensed_milk": "30ml"
       },
       "large": {
-        "ground_coffee_g": 30,
-        "water": 80,
-        "condensed_milk": 40,
-        "final_volume_ml": 150
+        "ground_coffee_g": "30g",
+        "water": "80ml",
+        "condensed_milk": "40ml"
       }
+    },
+    "final_volume": {
+      "small": "100ml",
+      "medium": "120ml",
+      "large": "150ml"
     },
     "notes": "Strong, sweet coffee often served iced.",
     "recipe_steps": [
@@ -380,13 +412,16 @@
   {
     "category": "Traditional",
     "name": "Greek Coffee",
-    "size": "single",
     "ingredients": {
-      "ground_coffee_g": 7,
-      "water": 70,
-      "sugar": 5
+      "small": {
+        "ground_coffee_g": "7g",
+        "water": "70ml",
+        "sugar": "5g"
+      }
     },
-    "final_volume_ml": 70,
+    "final_volume": {
+      "small": "70ml"
+    },
     "notes": "Unfiltered coffee brewed in a briki with foam ('kaimaki').",
     "recipe_steps": [
       "Add finely ground coffee, water, and sugar to a briki.",
@@ -398,12 +433,15 @@
   {
     "category": "Traditional",
     "name": "Cuban Coffee",
-    "size": "single",
     "ingredients": {
-      "espresso": 30,
-      "sugar": 10
+      "small": {
+        "espresso": "30ml",
+        "sugar": "10g"
+      }
     },
-    "final_volume_ml": 40,
+    "final_volume": {
+      "small": "40ml"
+    },
     "notes": "Espresso whipped with sugar into espuma.",
     "recipe_steps": [
       "Brew a shot of espresso.",
@@ -415,14 +453,17 @@
   {
     "category": "Traditional",
     "name": "Irish Coffee",
-    "size": "single",
     "ingredients": {
-      "hot_coffee": 120,
-      "whiskey": 30,
-      "brown_sugar": 10,
-      "cream": 30
+      "small": {
+        "hot_coffee": "120ml",
+        "whiskey": "30ml",
+        "brown_sugar": "10g",
+        "cream": "30ml"
+      }
     },
-    "final_volume_ml": 190,
+    "final_volume": {
+      "small": "190ml"
+    },
     "notes": "Coffee with whiskey, sugar, and cream float.",
     "recipe_steps": [
       "Brew hot coffee and pour into a warmed glass.",
