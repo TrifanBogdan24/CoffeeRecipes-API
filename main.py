@@ -113,10 +113,21 @@ def filter_coffees():
     
     return jsonify(filtered), 200
 
-# 9. /images/<coffee_name> -> get the picture of a coffee
-@webserver.route('/images/<coffee_name>')
-def get_image(coffee_name):
-    image_path = f'images/{coffee_name}.jpeg'
+# 9. /images/coffee_list/<coffee_name> -> get the picture of a coffee
+@webserver.route('/images/coffee_list/<coffee_name>')
+def get_coffee_img(coffee_name):
+    image_path = f'images/coffee_list/{coffee_name}.jpeg'
+    return send_file(image_path, mimetype='image/jpeg')
+
+
+
+# 10. /images/<coffe_type>/<cup_size> -> get the picture of a cup size
+@webserver.route('/images/<coffee_type>/<cup_size>')
+def get_cup_img(coffee_type, cup_size):
+    if coffee_type not in ['hot', 'cold']:
+        abort(404, description=f"Invalid coffee type '{coffee_type}'. Expected either 'hot' or 'cold'")
+
+    image_path = f'images/cup_sizes/{coffee_type}_coffees/{cup_size}.png'
     return send_file(image_path, mimetype='image/jpeg')
 
 
