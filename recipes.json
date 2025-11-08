@@ -11,12 +11,32 @@
       "small": "30ml"
     },
     "notes": "Single shot of concentrated coffee.",
-    "recipe_steps": [
-      "Grind fresh coffee beans to a fine consistency.",
-      "Tamp 7–9 g of coffee into the portafilter.",
-      "Brew a single shot (≈30 ml) using an espresso machine.",
-      "Serve immediately."
-    ]
+    "steps": {
+      "1": {
+        "title": "Preheat Equipment and Cup",
+        "description": "Flush a blank shot of hot water through your espresso machine and into your cup to preheat everything. This ensures the 30ml shot stays hot and maintains crema."
+      },
+      "2": {
+        "title": "Grind and Dose",
+        "description": "Grind fresh coffee to a fine consistency, using 7–9g of coffee. Weigh your coffee after grinding to ensure proper dose for optimal extraction."
+      },
+      "3": {
+        "title": "Distribute and Tamp",
+        "description": "Level the coffee in the portafilter and tamp evenly with ~30lb pressure. Uniform tamping avoids channeling and supports even extraction."
+      },
+      "4": {
+        "title": "Brew the Shot",
+        "description": "Lock the portafilter and start brewing. Aim for ~30ml of espresso in 25–30 seconds at 9 bar pressure and 90–96°C water temperature."
+      },
+      "5": {
+        "title": "Observe and Stop",
+        "description": "Stop the shot when the espresso reaches ~30ml and the flow begins to lighten. A properly timed shot has balanced flavor and a rich crema."
+      },
+      "6": {
+        "title": "Serve and Clean",
+        "description": "Serve immediately in the preheated cup. Knock out the puck, rinse the portafilter, and purge the group head for the next shot."
+      }
+    }
   },
   {
     "category": "Espresso-Based",
@@ -41,12 +61,28 @@
       "large": "300ml"
     },
     "notes": "Espresso diluted with hot water.",
-    "recipe_steps": [
-      "Prepare a shot of espresso (30–60 ml depending on size).",
-      "Pour hot water (90–210 ml depending on size) into a cup.",
-      "Add the espresso to the hot water.",
-      "Serve immediately."
-    ]
+    "steps": {
+      "1": {
+        "title": "Preheat Cup and Water",
+        "description": "Warm the serving cup with hot water and discard it. Ensure hot water (90–95°C) is ready for dilution to maintain proper temperature."
+      },
+      "2": {
+        "title": "Prepare Espresso Shot",
+        "description": "Pull an espresso shot using the size you selected: small 30ml, medium 60ml, large 90ml. Follow the standard espresso preparation steps: grind, dose, tamp, and brew."
+      },
+      "3": {
+        "title": "Add Hot Water to Cup",
+        "description": "Pour the correct volume of hot water (90ml small, 150ml medium, 210ml large) into the preheated cup before adding espresso to preserve crema."
+      },
+      "4": {
+        "title": "Combine Espresso and Water",
+        "description": "Gently pour the espresso over the hot water. Avoid vigorous stirring to maintain crema, adjusting water if necessary for taste."
+      },
+      "5": {
+        "title": "Serve Immediately",
+        "description": "Serve while hot, as Americano cools faster due to the added water."
+      }
+    }
   },
   {
     "category": "Espresso-Based",
@@ -71,12 +107,28 @@
       "large": "120ml"
     },
     "notes": "Espresso with a small amount of milk foam.",
-    "recipe_steps": [
-      "Prepare a shot of espresso.",
-      "Steam a small amount of milk and create foam.",
-      "Add a dollop of milk foam on top of the espresso.",
-      "Serve immediately."
-    ]
+    "steps": {
+      "1": {
+        "title": "Preheat Equipment and Cup",
+        "description": "Warm the cup and espresso machine group head with hot water to maintain espresso temperature and crema."
+      },
+      "2": {
+        "title": "Pull Espresso Shot",
+        "description": "Grind fresh coffee and brew espresso according to your selected size: 30ml, 60ml, or 90ml."
+      },
+      "3": {
+        "title": "Steam and Froth Milk",
+        "description": "Steam a small quantity of milk to create fine foam. Use milk foam volumes matching size: 10ml small, 20ml medium, 30ml large."
+      },
+      "4": {
+        "title": "Top Espresso with Foam",
+        "description": "Gently spoon the milk foam onto the espresso shot to create the characteristic 'stain' (macchiato)."
+      },
+      "5": {
+        "title": "Serve Immediately",
+        "description": "Serve in the preheated cup promptly to enjoy proper aroma and temperature."
+      }
+    }
   },
   {
     "category": "Espresso-Based",
@@ -104,13 +156,28 @@
       "large": "450ml"
     },
     "notes": "Equal parts espresso, steamed milk, and foam.",
-    "recipe_steps": [
-      "Prepare a shot of espresso.",
-      "Steam milk to about 60°C (140°F).",
-      "Froth milk to create thick foam.",
-      "Pour steamed milk over espresso, then spoon foam on top.",
-      "Serve immediately."
-    ]
+    "steps": {
+      "1": {
+        "title": "Preheat Equipment and Cup",
+        "description": "Flush hot water through machine and cup to maintain temperature during brewing."
+      },
+      "2": {
+        "title": "Brew Espresso Shot",
+        "description": "Brew espresso for your selected size: 30ml small, 60ml medium, 90ml large."
+      },
+      "3": {
+        "title": "Steam Milk",
+        "description": "Steam milk to 60°C, creating thick froth. Use volumes according to size: 60/120/180ml for steamed milk and foam."
+      },
+      "4": {
+        "title": "Pour Milk and Foam",
+        "description": "Pour steamed milk evenly over espresso, then spoon milk foam on top to create a balanced cappuccino."
+      },
+      "5": {
+        "title": "Serve Immediately",
+        "description": "Serve promptly to enjoy crema, milk texture, and aroma."
+      }
+    }
   },
   {
     "category": "Espresso-Based",
@@ -138,13 +205,28 @@
       "large": "450ml"
     },
     "notes": "Creamy espresso drink with lots of steamed milk.",
-    "recipe_steps": [
-      "Prepare a shot of espresso.",
-      "Steam milk to about 60°C (140°F).",
-      "Pour steamed milk over the espresso, holding back the foam.",
-      "Add a small layer of foam on top.",
-      "Serve immediately."
-    ]
+    "steps": {
+      "1": {
+        "title": "Preheat Equipment and Cup",
+        "description": "Warm cup and espresso machine group head with hot water."
+      },
+      "2": {
+        "title": "Brew Espresso Shot",
+        "description": "Pull espresso shot according to size: 30ml small, 60ml medium, 90ml large."
+      },
+      "3": {
+        "title": "Steam Milk",
+        "description": "Steam milk to 60°C. Use volumes: 150/240/330ml. Keep small layer of foam: 10/20/30ml."
+      },
+      "4": {
+        "title": "Pour Milk Over Espresso",
+        "description": "Gently pour steamed milk over espresso while holding back foam, then add the small foam layer on top."
+      },
+      "5": {
+        "title": "Serve Immediately",
+        "description": "Serve while hot to preserve aroma and texture."
+      }
+    }
   },
   {
     "category": "Espresso-Based",
@@ -169,12 +251,28 @@
       "large": "330ml"
     },
     "notes": "Strong coffee-to-milk ratio with silky microfoam.",
-    "recipe_steps": [
-      "Prepare a double shot of espresso (60 ml).",
-      "Steam milk to create velvety microfoam.",
-      "Pour milk over espresso, mixing evenly, with minimal foam on top.",
-      "Serve immediately."
-    ]
+    "steps": {
+      "1": {
+        "title": "Preheat Equipment and Cup",
+        "description": "Flush hot water through machine and cup to maintain temperature."
+      },
+      "2": {
+        "title": "Brew Espresso Shot",
+        "description": "Prepare espresso shot: 30/60/90ml depending on size."
+      },
+      "3": {
+        "title": "Steam Microfoam Milk",
+        "description": "Steam milk to create velvety microfoam matching volumes: 120/180/240ml."
+      },
+      "4": {
+        "title": "Pour Milk Evenly",
+        "description": "Pour microfoam milk over espresso, mixing evenly, with minimal foam on top."
+      },
+      "5": {
+        "title": "Serve Immediately",
+        "description": "Serve promptly to enjoy texture and aroma."
+      }
+    }
   },
   {
     "category": "Cold",
@@ -202,13 +300,28 @@
       "large": "490ml"
     },
     "notes": "Regular brewed coffee served cold over ice.",
-    "recipe_steps": [
-      "Brew coffee using drip or pour-over method.",
-      "Allow coffee to cool slightly.",
-      "Fill a glass with ice cubes.",
-      "Pour coffee over ice.",
-      "Add milk or sweetener if desired and stir."
-    ]
+    "steps": {
+      "1": {
+        "title": "Brew Coffee",
+        "description": "Use drip or pour-over method to brew coffee. Use the volume corresponding to size: 150/200/250ml."
+      },
+      "2": {
+        "title": "Cool Coffee Slightly",
+        "description": "Allow brewed coffee to cool to prevent rapid ice melt which dilutes the drink."
+      },
+      "3": {
+        "title": "Prepare Glass with Ice",
+        "description": "Add ice: 100/120/150ml depending on size."
+      },
+      "4": {
+        "title": "Combine Coffee and Milk",
+        "description": "Pour coffee over ice, then add milk: 30/60/90ml depending on size. Stir gently."
+      },
+      "5": {
+        "title": "Serve Immediately",
+        "description": "Serve chilled for optimal flavor."
+      }
+    }
   },
   {
     "category": "Cold",
@@ -236,13 +349,24 @@
       "large": "360ml"
     },
     "notes": "Slow-steeped cold coffee diluted to taste.",
-    "recipe_steps": [
-      "Coarsely grind coffee beans (≈1:8 ratio coffee to water).",
-      "Steep coffee in cold water for 12–24 hours in a container.",
-      "Strain coffee through a fine mesh or filter.",
-      "Pour over ice and dilute with water or milk to taste.",
-      "Serve immediately."
-    ]
+    "steps": {
+      "1": {
+        "title": "Prepare Cold Brew Concentrate",
+        "description": "Coarsely grind coffee beans (≈1:8 ratio) and steep in cold water for 12–24 hours. Strain before use."
+      },
+      "2": {
+        "title": "Fill Glass with Ice",
+        "description": "Add ice to glass according to size: 80/100/120ml."
+      },
+      "3": {
+        "title": "Combine Concentrate and Dilution",
+        "description": "Mix cold brew concentrate with water or milk in equal proportion: 80/100/120ml each for small/medium/large."
+      },
+      "4": {
+        "title": "Serve Chilled",
+        "description": "Serve immediately over ice for a refreshing cold brew."
+      }
+    }
   },
   {
     "category": "Cold",
@@ -256,12 +380,20 @@
       "small": "240ml"
     },
     "notes": "Nitrogen-infused cold brew with creamy texture.",
-    "recipe_steps": [
-      "Prepare cold brew coffee concentrate.",
-      "Infuse nitrogen using a nitro tap or canister.",
-      "Pour nitro cold brew into a glass without stirring.",
-      "Serve chilled with creamy texture."
-    ]
+    "steps": {
+      "1": {
+        "title": "Prepare Cold Brew Concentrate",
+        "description": "Make or use pre-prepared cold brew concentrate."
+      },
+      "2": {
+        "title": "Infuse with Nitrogen",
+        "description": "Use a nitro tap or canister to infuse nitrogen into the cold brew."
+      },
+      "3": {
+        "title": "Pour and Serve",
+        "description": "Pour nitro cold brew into glass without stirring. Serve chilled for creamy texture."
+      }
+    }
   },
   {
     "category": "Cold",
@@ -289,13 +421,28 @@
       "large": "420ml"
     },
     "notes": "Espresso poured over milk and ice.",
-    "recipe_steps": [
-      "Prepare a shot of espresso.",
-      "Fill a glass with ice cubes.",
-      "Pour espresso over ice.",
-      "Add cold milk (proportional to size).",
-      "Stir gently and serve."
-    ]
+    "steps": {
+      "1": {
+        "title": "Prepare Espresso",
+        "description": "Pull espresso according to size: 30/60/90ml."
+      },
+      "2": {
+        "title": "Add Ice to Glass",
+        "description": "Fill glass with ice cubes: 80/100/120ml depending on size."
+      },
+      "3": {
+        "title": "Pour Espresso Over Ice",
+        "description": "Add freshly brewed espresso over ice to preserve flavor."
+      },
+      "4": {
+        "title": "Add Cold Milk",
+        "description": "Pour cold milk according to size: 120/180/240ml."
+      },
+      "5": {
+        "title": "Serve",
+        "description": "Stir gently and serve immediately."
+      }
+    }
   },
   {
     "category": "Cold",
@@ -326,12 +473,24 @@
       "large": "420ml"
     },
     "notes": "Blended iced coffee with milk and syrup.",
-    "recipe_steps": [
-      "Brew espresso or instant coffee and allow it to cool.",
-      "Add coffee, milk, sweetener/syrup, and crushed ice to a blender.",
-      "Blend until smooth and frothy.",
-      "Pour into a glass and optionally top with whipped cream."
-    ]
+    "steps": {
+      "1": {
+        "title": "Prepare Coffee",
+        "description": "Brew espresso or instant coffee and allow it to cool."
+      },
+      "2": {
+        "title": "Combine Ingredients in Blender",
+        "description": "Add coffee, milk, syrup/sugar, and crushed ice to blender according to size."
+      },
+      "3": {
+        "title": "Blend",
+        "description": "Blend until smooth and frothy."
+      },
+      "4": {
+        "title": "Serve",
+        "description": "Pour into a glass and optionally top with whipped cream."
+      }
+    }
   },
   {
     "category": "Traditional",
@@ -347,13 +506,20 @@
       "small": "70ml"
     },
     "notes": "Thick, unfiltered coffee brewed in a cezve.",
-    "recipe_steps": [
-      "Add finely ground coffee, water, and sugar (if desired) to a cezve.",
-      "Stir well to mix.",
-      "Heat slowly over low heat until it foams and just before boiling.",
-      "Remove from heat, pour into cup, and allow grounds to settle.",
-      "Serve without filtering."
-    ]
+    "steps": {
+      "1": {
+        "title": "Add Ingredients to Cezve",
+        "description": "Place 7g finely ground coffee, 70ml water, and 5g sugar into the cezve."
+      },
+      "2": {
+        "title": "Stir and Heat",
+        "description": "Stir the mixture, then heat slowly over low heat until it foams just before boiling."
+      },
+      "3": {
+        "title": "Pour and Settle",
+        "description": "Pour into cup and allow grounds to settle. Serve without filtering."
+      }
+    }
   },
   {
     "category": "Traditional",
@@ -369,12 +535,20 @@
       "small": "100ml"
     },
     "notes": "Light roast coffee with cardamom, traditionally unsweetened.",
-    "recipe_steps": [
-      "Add lightly roasted coffee and cardamom to a small pot with water.",
-      "Bring slowly to a simmer over low heat.",
-      "Remove from heat and pour carefully into small cups.",
-      "Serve hot and traditionally without sugar."
-    ]
+    "steps": {
+      "1": {
+        "title": "Add Ingredients to Pot",
+        "description": "Place lightly roasted coffee and cardamom into a small pot with 100ml water."
+      },
+      "2": {
+        "title": "Simmer Slowly",
+        "description": "Bring slowly to a simmer over low heat. Avoid boiling."
+      },
+      "3": {
+        "title": "Pour and Serve",
+        "description": "Pour carefully into cups and serve hot without sugar."
+      }
+    }
   },
   {
     "category": "Traditional",
@@ -402,12 +576,24 @@
       "large": "150ml"
     },
     "notes": "Strong, sweet coffee often served iced.",
-    "recipe_steps": [
-      "Place ground coffee into a Vietnamese drip filter (phin) over a cup.",
-      "Pour hot water and allow coffee to drip slowly.",
-      "Mix with sweetened condensed milk to taste.",
-      "Serve hot or pour over ice for iced version."
-    ]
+    "steps": {
+      "1": {
+        "title": "Prepare Vietnamese Drip",
+        "description": "Place ground coffee into a Vietnamese drip filter (phin) over a cup."
+      },
+      "2": {
+        "title": "Brew Coffee",
+        "description": "Pour hot water (50/60/80ml) over coffee and allow to drip slowly."
+      },
+      "3": {
+        "title": "Add Condensed Milk",
+        "description": "Mix with condensed milk (25/30/40ml) to taste."
+      },
+      "4": {
+        "title": "Serve Hot or Iced",
+        "description": "Serve hot, or pour over ice for iced version."
+      }
+    }
   },
   {
     "category": "Traditional",
@@ -423,12 +609,20 @@
       "small": "70ml"
     },
     "notes": "Unfiltered coffee brewed in a briki with foam ('kaimaki').",
-    "recipe_steps": [
-      "Add finely ground coffee, water, and sugar to a briki.",
-      "Stir and heat slowly until it foams but before boiling.",
-      "Pour carefully into small cup, preserving the foam (‘kaimaki’).",
-      "Serve without filtering."
-    ]
+    "steps": {
+      "1": {
+        "title": "Add Ingredients to Briki",
+        "description": "Place 7g finely ground coffee, 70ml water, and 5g sugar into a briki."
+      },
+      "2": {
+        "title": "Heat Slowly",
+        "description": "Stir and heat slowly until foam forms but before boiling."
+      },
+      "3": {
+        "title": "Pour and Preserve Foam",
+        "description": "Pour carefully into small cup preserving the foam ('kaimaki'). Serve without filtering."
+      }
+    }
   },
   {
     "category": "Traditional",
@@ -443,12 +637,20 @@
       "small": "40ml"
     },
     "notes": "Espresso whipped with sugar into espuma.",
-    "recipe_steps": [
-      "Brew a shot of espresso.",
-      "Whip sugar with a small amount of the first espresso drops until foamy.",
-      "Pour remaining espresso over the whipped sugar to create espuma.",
-      "Serve immediately."
-    ]
+    "steps": {
+      "1": {
+        "title": "Brew Espresso",
+        "description": "Prepare a 30ml shot of espresso."
+      },
+      "2": {
+        "title": "Whip Sugar with Espresso",
+        "description": "Mix sugar with first drops of espresso to create foamy espuma."
+      },
+      "3": {
+        "title": "Combine and Serve",
+        "description": "Pour remaining espresso over whipped sugar and serve immediately."
+      }
+    }
   },
   {
     "category": "Traditional",
@@ -465,12 +667,27 @@
       "small": "190ml"
     },
     "notes": "Coffee with whiskey, sugar, and cream float.",
-    "recipe_steps": [
-      "Brew hot coffee and pour into a warmed glass.",
-      "Add brown sugar and stir until dissolved.",
-      "Add whiskey and stir gently.",
-      "Float lightly whipped cream on top.",
-      "Serve hot."
-    ]
+    "steps": {
+      "1": {
+        "title": "Prepare Coffee",
+        "description": "Brew 120ml of hot coffee and pour into warmed glass."
+      },
+      "2": {
+        "title": "Add Sugar",
+        "description": "Stir in 10g brown sugar until dissolved."
+      },
+      "3": {
+        "title": "Add Whiskey",
+        "description": "Pour 30ml whiskey and stir gently."
+      },
+      "4": {
+        "title": "Float Cream",
+        "description": "Lightly whip 30ml cream and float on top."
+      },
+      "5": {
+        "title": "Serve Hot",
+        "description": "Serve immediately while warm."
+      }
+    }
   }
 ]

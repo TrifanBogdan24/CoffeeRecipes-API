@@ -3,12 +3,18 @@ from http import HTTPStatus
 import json
 import os
 
+
+RECIPES_FILE = "recipes.json"
+
 webserver = Flask(__name__)
 
-# Load the combined JSON data
-RECIPES_FILE = "recipes.json"
-with open(RECIPES_FILE, "r", encoding="utf-8") as f:
-    recipes_data = json.load(f)
+
+
+def read_recipes():
+    # Load the combined JSON data
+    with open(RECIPES_FILE, "r", encoding="utf-8") as f:
+        recipes_data = json.load(f)
+    return recipes_data
 
 # Helper function to create arrays coffee sizes
 def get_sizes_for_coffee(coffee):
@@ -24,23 +30,27 @@ def root_page():
 # 1. /coffee_recipes -> Returns all coffees with ingredients and recipe steps
 @webserver.route("/coffee_recipes", methods=["GET"])
 def coffee_recipes():
+    recipes_data = read_recipes()
     return jsonify(recipes_data), 200
 
 # 2. /coffees -> return all coffee names
 @webserver.route("/coffees", methods=["GET"])
 def coffee_names():
+    recipes_data = read_recipes()
     names = [c["name"] for c in recipes_data]
     return jsonify(names), 200
 
 # 3. /categories -> return all category names (standardized to lowercase)
 @webserver.route("/categories", methods=["GET"])
 def categories():
+    recipes_data = read_recipes()
     cats = list(set(c["category"].lower() for c in recipes_data))
     return jsonify(cats), 200
 
 # 4. /category/<category_name> -> coffee names under category
 @webserver.route("/category/<category_name>", methods=["GET"])
 def coffees_by_category(category_name):
+    recipes_data = read_recipes()
     names = [c["name"] for c in recipes_data if c["category"].lower() == category_name.lower()]
     if not names:
         abort(404, description="Category not found")
@@ -49,6 +59,8 @@ def coffees_by_category(category_name):
 # 5. /coffees/<coffee_name>/sizes -> list of sizes
 @webserver.route("/coffees/<coffee_name>/sizes", methods=["GET"])
 def coffee_sizes(coffee_name):
+    recipes_data = read_recipes()
+
     coffee = next((c for c in recipes_data if c["name"].lower().replace(' ', '_') == coffee_name.lower()), None)
     if not coffee:
         abort(404, description="Coffee not found")
@@ -58,6 +70,8 @@ def coffee_sizes(coffee_name):
 # 6. /coffees/<size_name>/<coffee_name>/ingredients -> return ingredients for specified size
 @webserver.route("/coffees/<size_name>/<coffee_name>/ingredients", methods=["GET"])
 def coffee_ingredients_size(coffee_name, size_name):
+    recipes_data = read_recipes()
+
     coffee = next(
         (c for c in recipes_data if c["name"].lower().replace(' ', '_') == coffee_name.lower()),
         None
@@ -72,18 +86,22 @@ def coffee_ingredients_size(coffee_name, size_name):
     return jsonify(ingredients), 200
 
 
-# 7. /coffees/<coffee_name>/size/<size_name>/steps -> return recipe steps for coffee (same for all sizes)
+# 7. /coffees/<coffee_name>/steps -> return recipe steps for coffee (same for all sizes)
 @webserver.route("/coffees/<coffee_name>/steps", methods=["GET"])
 def coffee_steps(coffee_name):
+    recipes_data = read_recipes()
+
     coffee = next((c for c in recipes_data if c["name"].lower().replace(' ', '_') == coffee_name.lower()), None)
     if not coffee:
         abort(404, description="Coffee not found")
-    steps = coffee.get("recipe_steps", [])
+    steps = coffee.get("steps", [])
     return jsonify(steps), 200
 
 # 8. /coffees/<coffee_name>/<size_name>/final_volume
 @webserver.route("/coffees/<coffee_name>/<size_name>/final_volume", methods=["GET"])
 def coffee_final_volume(coffee_name, size_name):
+    recipes_data = read_recipes()
+
     # Find the coffee by name
     coffee = next(
         (c for c in recipes_data if c["name"].lower().replace(' ', '_') == coffee_name.lower()),
@@ -105,6 +123,8 @@ def coffee_final_volume(coffee_name, size_name):
 # 9. /coffees/filter?category=&name=&size= -> flexible filtering
 @webserver.route("/coffees/filter", methods=["GET"])
 def filter_coffees():
+    recipes_data = read_recipes()
+
     category = request.args.get("category")
     name = request.args.get("name")
     size = request.args.get("size")
@@ -146,7 +166,6 @@ def get_cup_img(coffee_type, cup_size):
 
     image_path = f'images/cup_sizes/{coffee_type}_coffees/{cup_size}.png'
     return send_file(image_path, mimetype='image/jpeg')
-
 
 
 # Error handlers
